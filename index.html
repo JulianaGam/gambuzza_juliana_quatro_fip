@@ -3,9 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quatro - Cocktails</title>
+    <link rel="stylesheet" href="css/grid.css"> 
+    <link rel="stylesheet" href="css/main.css"> 
 </head>
 <body>
+  <!-- Age Filter -->
+<section id="age-filter">
+    <div class="age-filter-content">
+      <h1 class="hidden">QUATRO</h1>
+        <img src="images/logos-quatro/quatro-logo-blanco.png" alt="Quatro Logo" class="age-logo">
+        <p class="age-text">ARE YOU OF LEGAL DRINKING AGE?</p>
+            <div class="age-date">
+                <input type="text" placeholder="DD*" id="day-box">
+                <input type="text" placeholder="MM*" id="month-box">
+                <input type="text" placeholder="YYYY*" id="year-box">
+            </div>
+        <button id="confirm-age">Confirm</button>
+        <p class="age-note">Please drink responsibly. © 2025 Quatro beverage</p>
+    </div>
+</section>  
+<header class="grid-con" id="main-header">
+    <!-- Burger -->
+    <button id="burger-button" aria-label="Toggle Menu" class=" m-col-start-1 m-col-span-2 l-col-start-1 l-col-span-1"></button>
+      
+    <!-- Logo -->
+    <section id="quatro-logo" class="col-start-2 col-span-2 m-col-start-6 m-col-span-2 l-col-start-2 l-col-end-4">
+          <h1 class="hidden">QUATRO</h1>
+          <img src="images/logos-quatro/quatro-logo.png" alt="Quatro Logo">
+    </section>
+      
+    <!-- Cart -->
+    <div class="cart col-start-4 m-col-start-11 m-col-span-2 l-col-start-11 l-col-span-2">
+        <button class="cart-button" aria-label="Cart">
+            <img src="images/logos-quatro/add-to-cart.png" alt="Cart Icon">
+        </button>
+    </div>
+      
+    <!-- NAVIGATION -->
+    <nav id="main-nav" class="l-col-start-5 l-col-end-9">
+        <div id="burger-con">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="aboutus.html">About Us</a></li>
+              <li><a href="">Products</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main>
+    <section class="full-width-grid-con hero-image-homepage" id="hero">
+        <h2 class="hidden">Hero image</h2>
+    </section>
+          
+    <section class="product-flavours grid-con">
+
+        <h2 class="col-span-full m-col-span-12 l-col-span-12" id="flavours-text">Check Our Flavours</h2>
+          
+            <div class="carousel-contain col-span-full m-col-span-12 l-col-span-12">
+              <div class="carousel-box">
+                <div class="carousel-move">
+            
+                  <div class="carousel-slide product-box" data-flavour="0">
+                        <div class="image-wrapper">
+                            <img src="images/cinema-cans/cherry-edit-cans.png" alt="Cherry Bomb">
+                        </div>
+                        <h3 class="product-info">Cherry Bomb</h3>
+                        <button class="add-to-cart" data-product="Cherry Bomb">Add to Cart</button>
+                  </div>
+            
+                  <div class="carousel-slide product-box" data-flavour="1">
+                        <div class="image-wrapper">
+                            <img src="images/cinema-cans/peach-edit-can.png" alt="Peach Bellini">
+                        </div>
+                        <h3 class="product-info">Peach Bellini</h3>
+                        <button class="add-to-cart" data-product="Peach Bellini">Add to Cart</button>
+                  </div>
+            
+                  <div class="carousel-slide product-box" data-flavour="2">
+                        <div class="image-wrapper">
+                            <img src="images/cinema-cans/kiwi-edit-can.png" alt="Kiwi Martini">
+                        </div>
+                        <h3 class="product-info">Kiwi Martini</h3>
+                        <button class="add-to-cart" data-product="Kiwi Martini">Add to Cart</button>
+                  </div>
+            
+                  <div class="carousel-slide product-box" data-flavour="3">
+                        <div class="image-wrapper">
+                            <img src="images/cinema-cans/pina-can-edit.png" alt="Piña Colada">
+                        </div>
+                        <h3 class="product-info">Piña Colada</h3>
+                        <button class="add-to-cart" data-product="Piña Colada">Add to Cart</button>
+                    </div>
+            
+                  <div class="carousel-slide product-box" data-flavour="4">
+                        <div class="image-wrapper">
+                            <img src="images/cinema-cans/grape-edit-can.png" alt="Grape Cosmo">
+                        </div>
+                        <h3 class="product-info">Grape Cosmo</h3>
+                        <button class="add-to-cart" data-product="Grape Cosmo">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+            
+              <div id="arrows">
+                <a href="#" id="left-arrow" class="arrow">&#60;</a>
+                <a href="#" id="right-arrow" class="arrow">&#62;</a>
+              </div>
+            </div>
+            
+    <!-- Lightbox -->
+    <div id="flavour-lightbox" class="hidden">
+        <div class="lightbox-content">
+            <span id="close-lightbox">&times;</span>
+            <img id="lightbox-image" src="images/no-photo.png" alt="Flavour image">
+            <h3 id="lightbox-title">lightbox title</h3>
+            <p id="lightbox-description"></p>
+            <p id="lightbox-ingredients"></p>
+        </div>
+    </div>
+    </section>
+          
+    <!-- Video Section -->       
+
+    <section class="video-section">
+        <div class="video-text">
+            <div class="video-content">
+                <h2>
+                Quatro:<br>
+                <span>Bold flavours, endless moments.</span>
+                </h2>
+                <a href="aboutus.html" class="about-button-desktop">More about us</a>
+            </div>
+        </div>
+          
+        <div class="video-container">
+            <video controls muted>
+                <source src="video/gambuzza_juliana_video_fip.mp4" type="video/mp4">
+            </video>
+            <a href="aboutus.html" class="about-button">More about us </a>
+        </div>
+    </section>
+          
+        
+    <!-- Stores Section -->     
+
+    <section class="store-section grid-con">
+        <h2 class="col-span-full l-col-span-full" id="store-text">Find us in your favourite store</h2>
+            <div class="store-logos col-span-full">
+                  
+                <a href="https://www.walmart.ca/" target="_blank">
+                    <img src="images/logos-quatro/wallmart-logo.png" alt="Walmart">
+                </a>
+                <a href="https://www.lcbo.com/" target="_blank">
+                    <img src="images/logos-quatro/LCBO-logo.png" alt="LCBO">
+                </a>
+                <a href="https://www.metro.ca/" target="_blank">
+                    <img src="images/logos-quatro/metro-logo.png" alt="Metro">
+                </a>
+            </div>
+    </section>
+</main> 
+<footer>
+    <section>
+        <h2 class="hidden">footer section</h2>
+            <section class= "grid-con">
+                <h2 class="hidden">footer section</h2>
+                    <!-- footer Logo -->
+                <div class="footer-logo col-start-1 col-end-2 l-col-start-2 l-col-end-4">
+                    <img src="images/logos-quatro/quatro-logo-blanco.png" alt="logo footer">
+                </div>
+                <!--  footer menu -->
+                <nav class="footer-nav col-start-1 col-span-1 m-col-start-4 m-col-end-7 l-col-start-5 l-col-end-8">
+                    <ul class="footer-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
     
+                <!-- social icons -->
+                <div class="footer-social col-start-4 col-span-2 m-col-start-8 m-col-end-12 l-col-start-9 l-col-span-5">
+                    <h2 class="hidden">Follow us on social media</h2>
+                    <img src="images/logos-quatro/instagram-logo-blanco.svg" alt="Instagram">
+                    <img src="images/logos-quatro/facebook-logo-blanco.svg" alt="Facebook">
+                    <img src="images/logos-quatro/x-logo-blanco.svg" alt="Twitter">
+                </div>
+                <!-- footer text -->
+            <div class="col-span-full m-col-span-full l-col-span-full">
+                <p id="footer-text">Please drink responsibly. © 2025 Quatro beverage</p>
+            </div> 
+        </section>
+    </section>
+</footer>
+    <script src="js/main.js"></script> 
 </body>
 </html>

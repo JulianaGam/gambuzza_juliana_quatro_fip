@@ -809,7 +809,90 @@ body {
   #paragraph1, #paragraph2, #paragraph3 {
     margin-bottom: 10px;
   }
+/* -------------------------- CONTACT PAGE----------------------------------- */
 
+.hero-content-box {
+    background-image: url("../images/contact-hero/contact-hero-412px.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 300px; 
+  }
+  
+  .contact-page {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .contact-page h2 {
+    font-size: 2rem;
+    color: #002C41;
+    margin-bottom: 20px;
+  }
+  
+  #hero-contact-page {
+    width: 100%;
+    height: auto; 
+    display: block;
+  }
+  
+  /* Form styling */
+  
+  .contact-page {
+    width: 100%;
+    padding: 40px 20px;
+  }
+  
+  .contact-form {
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Form elements */
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #002C41;
+  }
+  
+  .name-boxes,
+  .more-info-boxes {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .name-boxes input,
+  .more-info-boxes input {
+    width: 100%;
+  }
+  
+  #contact-button button {
+    margin-top: 10px;
+    background-color: #002C41;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    width: 180px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #contact-button button:hover {
+    background-color: #015982;
+  }
+  
+  .contact-page h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
   /* 3.tablet styles */
 
@@ -965,6 +1048,25 @@ body {
 .hero-content-box-about {
     background-image: url("../images/about-us/quatro-people-700px.png");
     height: 500px;
+  }
+  
+
+  /*------------ Contact page ------------*/
+
+.hero-content-box{
+    background-image: url("../images/contact-hero/hero-contact-700px.jpg");
+    height: 500px;
+  }
+  .name-boxes,
+  .more-info-boxes {
+    flex-direction: column;
+  }
+  
+  #contact-button button {
+    width: 125px;
+    padding: 10px 30px;
+    display: block;
+    margin: 16px  0 auto; /* arriba, derecha, abajo, izquierda */
   }
   
   }
@@ -1301,5 +1403,23 @@ body {
     font-size: 40px;
   }
   
+  /*------------ Contact page ------------*/
+.hero-content-box {
+    background-image: url("../images/contact-hero/hero-contact-1200px.jpg");
+    height: 700px;
+  }
+  
+  #contact-button button {
+    width: 210px;
+    margin-top: 10px;
+    background-color: #002C41;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
   
 }

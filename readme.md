@@ -1,6 +1,11 @@
 # Final Integrated Project
 This repository is about the Final Integrated Project for the second term of the  Interactive Media Design program. The assignment was to create a Rebrand and marketing campaign for Quatro, including the responsive website, using the topics covered in class.  
 
+- This is a responsive website, mobile first and tablet and desktop modifies with media query
+- It includes css animations with Keyframes 
+- JavaScript array of objects for the lightbox
+- HTML, CSS, JavaScript best practices
+
 
 ## Installation
 Not need it. Download the Zip file.
@@ -65,7 +70,7 @@ Finally add the event listener so that the function is working every time the ha
 - How do I get the maths to work with days and months
 - How do I get it to be the first thing that comes up and closes when the age has been filtered
 - Watch tutorials and pages that explain how to do it.
-- Rob explain me the localStorage to keep the info of the birth date and the age filter wont show again, I have to try to figure it out how to make it work
+- Rob explain me the ***localStorage*** to keep the info of the birth date and the age filter wont show again, I have to try to figure it out how to make it work
 
 ### 3. Conclusions: 
 
@@ -98,3 +103,78 @@ Finally, create the event listener so that the ***checkAge()*** function is done
 - https://optinmonster.com/how-to-add-age-verification-to-websites/
 - https://www.youtube.com/watch?v=Ymb8sr3XBBQ
 - https://www.youtube.com/watch?v=SuYHYNgFSjo 
+
+
+## Carousel
+
+ ### 1. Identify what I want to do:
+ I want to create a carousel that moves can by can, that is to say I want to create a container with each one of the cans and that in the container this applied the carousel so that it moves one by one, in desktop and tablet I want that 3 cans are shown and it moves one by one and in mobile I want that one is shown and it moves also one by one. For that I need arrows on both sides of the carousel to move the carousel to the left or right.
+
+ ### 2. Strategies:
+
+#### Do some research:
+
+- Using the class examples understand how to move the slides with ***translateX()***
+- I have to make it responsive so I have to find a solution to make it happen.
+- Watch tutorials and pages that explain how to do it.
+- Search how to solve that when moving the carousel does not move with everything and buttons.
+
+### 3. Conclusions: 
+
+First I create my container ***.carousel-move*** which will be the space where my cans will go and where they are going to move using the logic of ***translateX()***, to this container I create the variable ***const track = document.querySelector(“.carousel-move”);*** to later create the function that will help me to move it. 
+
+Inside my container ***.carousel-move*** I create what I want to show in the carousel, that is my cans ***.carousel-slide*** and I create a variable ***const slides = document.querySelectorAll(“.carousel-slide”);*** so that in an organized way they are going to move depending on the width of each one of the cans.
+
+I also create variables for the arrows, one moves to the left and the other to the right. Finally to complement the movement of can by can depending on the width I create a variable ***let currentIndex = 0*** that is going to be used so that the movement is made with the correct position, so a can is not going to be halfway. And as I want that it is responsive, the variable ***let slidesPerView = getSlidesPerView();*** is created so that depending on the size of the screen, if it is mobile or desktop it is shown or one or 3 cans.
+
+At the moment of creating the functions, I take the logic with which I planned them;  So with the variable ***getSlidesPerView()*** I use a function of if and else, in which I say that "if the screen is 1200px return (show) 3, else return (show) 1."
+
+I create the function ***updateCarousel()*** to move the carousel using ***translateX()***, I tell the function that depending on the ***currentIndex*** (in which can it is) it multiplies it by the width of the can and with the answer it moves it ***translateX(offset.px)***.
+
+I also create the function ***goToNextSlide()*** in which I say that “if ***currentIndex*** (current can) plus ***slidesPerView*** (how many cans are shown, if desktop or mobile), it is equal to ***slides.length*** (the total number of cans to be shown). So that when there are no more cans to show (after the last one) ***currentIndex = 0***” which returns it to the beginning as if it had already turned around and started over. but  “else if it is not in the last slide” calls the function  ***updateCarousel()*** to move to the next can.
+
+And the last function ***goToPrevSlide()*** create it to go to the previous can, with the following logic ‘***if currentIndex <= 0***, if ***currentIndex*** is at 0 there is no way to go backwards so it takes you to the last can (from cherry to grape)’. “else if you are not on the first slide ***(currentIndex <= 0)*** then subtract 1 (--) from the ***currentIndex*** it is on” and call the ***updateCarousel()*** function to move one can backwards.
+
+Finally, I create the event listeners, so first I verify that each of my elements (***track, flavourSlides, arrows*** ) are there. then I add the event listeners when clicked for each of the arrows and finally I add ***window.addEventListener(“resize”, function())*** so that depending on the size of the screen it calculates how many cans should be displayed ***slidesPerView*** and the carousel ***updateCarousel()*** is updated.
+
+### 4. Sources: 
+
+- https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateX
+- https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_overflow
+- https://codepen.io/azobenko/pen/QWzzPYx 
+- https://codepen.io/sophgdn/pen/pxPmgr 
+- https://programmingduck.com/articles/javascript-carousel
+- https://www.w3schools.com/howto/howto_js_slideshow.asp
+- https://css-tricks.com/the-javascript-behind-touch-friendly-sliders/
+- https://www.youtube.com/watch?v=9HcxHDS2w1s
+- https://www.youtube.com/watch?v=GnK3GCQ_X_k
+- https://www.youtube.com/watch?v=lpDAFrD_Rfg&t=737s
+- https://www.youtube.com/watch?v=sqkozb5UCcs
+
+## Lightbox with arrays
+
+ ### 1. Identify what I want to do:
+
+ I want that when I click on the can that is in the carousel a lightbox like in the example of marvel of class, that inside the lightbox there is another image of the can, with information of the flavor and its ingredients. I need to have options to close the lightbox so I will put an X in the upper corner and that this the option of when you click outside the box of the lightbox also can be closed.
+
+ ### 2. Strategies:
+#### Do some research:
+
+- Make the selection of the arrays based on the class example
+- How do I make the lightbox responsive 
+- How do I make the loghtbox close when you click outside the lightbox
+- How do I make it look a bit dark when you click behind the lightbox
+
+### 3. Conclusions: 
+
+The first thing is to create the variable ***flavourInfo*** where the array [ ] will go; inside the array will go the objects {}, each object will be a flavour and in each flavour will go the name, the description, the ingredients and the image. Also I set the variables: ***flavourSlides*** which selects the element inside the ***.carousel-slide***. Another for the lightbox to show or hide the ***#flavour-lightbox***, and set a variable for the close button, for the flavour title, flavour description, ingredients and the image.
+
+I create the function ***fillLightbox*** which I want to fill the information of the lightbox depending on the can that has been selected, here starts all ***const index = this.dataset.flavour*** takes the information of which object has been selected and shows depending on its ***dataset*** and according to that ***const flavour = flavourInfo[index];*** shows its name, description, ingredients and image. I also create ***lightbox.classList.add(“show”)*** to make the lightbox visible when clicked.
+
+Next I create the function to close the lightbox by clicking on the x ***closeLightboxFunction***, to close it I just remove the class ***.show*** using: ***lightbox.classList.remove('show');***  and finally the function to close the lightbox when you click outside the lightbox ***outsideClick***, "if someone clicks outside the lightbox call the function ***closeLightboxFunction***".
+
+### 4. Sources: 
+
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+- https://www.youtube.com/watch?v=YVUSgLaWVsk

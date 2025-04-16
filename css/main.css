@@ -21,6 +21,88 @@ body {
     overflow-x: hidden;
   }
 
+/*---------------- Age filter ---------------*/
+
+/* Container covers whole screen */
+#age-filter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* 100% viewport width*/
+    height: 100vh;/* 100% viewport height*/
+    background-color: #002C41; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    padding: 20px;
+  }
+  
+  .age-filter-content {
+    text-align: center;
+    color: white;
+    width: 100%;
+  }
+  
+  .age-filter-content h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+  
+  .age-text {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  /*DD MM YYYY boxes*/
+  .age-date {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  /*DD MM YYYY boxes*/
+  .age-date input {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    width: 100%; 
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  /* Confirm button */
+  #confirm-age {
+    background-color: white;
+    color: #002C41;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  #confirm-age:hover {
+    background-color: #015982;
+    color: white;
+  }
+  
+  /* Note text */
+  .age-note {
+    margin-top: 20px;
+    font-size: 12px;
+    color: rgba(237, 237, 237, 0.755); /* Just for the text at the end*/
+  }
+
+
+
+
   /* 2. ---------------- Home page---------------- */
 
 /*Header*/

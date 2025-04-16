@@ -661,6 +661,123 @@ body {
     }
   }
 
+   /* -------------------------- ABOUT US PAGE----------------------------------- */
+
+.about-hero {
+    width: 100%;
+  }
+      
+  .hero-content-box-about {
+    grid-column: 1 / -1; /*  expand div to all the grid columns */
+    background-image: url("../images/about-us/quatro-people-412px.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 300px; 
+  }
+  
+  /* Hero Section */
+  .about-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /*-----About Section---*/
+  .about-intro {
+    text-align: center;
+    margin: 40px 0;
+  }
+  
+  .about-intro img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .about-text h3 {
+    color: #002C41;
+    margin-bottom: 15px;
+  }
+  
+  #about-quatro-text {
+    color: #002C41;
+    margin-bottom: 15px;
+  }
+  
+  #guess-what-text{
+    color: #002C41;
+    margin-bottom: 20px; 
+  }
+  
+  .about-text p {
+    color: #000000;
+  }
+  
+  #cocktail-born{
+  margin: 20px;
+  font-size: 20px;
+  }
+  
+  #surprise-text{
+  font-size: 30px;
+  color: #FFF;
+  text-align: center;
+  margin-bottom: 20px;
+  }
+  
+  #about-quatro-text{
+    color: #002C41;
+    padding-bottom: 30px;
+  }
+  
+  /* Middle Section */
+  .about-middle {
+    background-color: #002C41;
+    color: rgb(215, 215, 215);
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .about-middle img {
+    width: 100%;
+    height: auto;
+  }
+  
+  #middle-text{
+    padding: 20px;
+  }
+  
+  /* Billboard Section */
+  .about-billboard {
+    text-align: center;
+    margin: 40px 0;
+  }
+  
+  .billboard-image img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .billboard-text p {
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  /* Video Section */
+  .about-video {
+    text-align: center;
+    margin: 40px 0;
+  }
+  
+  .about-intro, .about-billboard {
+    padding: 20px 0;
+  }
+  
+  #paragraph1, #paragraph2, #paragraph3 {
+    margin-bottom: 10px;
+  }
+
 
   /* 3.tablet styles */
 
@@ -811,7 +928,16 @@ body {
     margin-top: 10px;
     text-align: center;
   }
-}
+
+  /*------------ About us page ------------*/
+.hero-content-box-about {
+    background-image: url("../images/about-us/quatro-people-700px.png");
+    height: 500px;
+  }
+  
+  }
+  
+
 
 /* 4. desktop styles */
 
@@ -1057,4 +1183,91 @@ body {
  .about-button-desktop{
    display: block !important; /* show dektop one */
  }
+
+ /*------------ About us page ------------*/
+
+.hero-content-box-about {
+    background-image: url("../images/about-us/quatreo-people-1200px.png");
+    height: 800px;
+  }
+  
+  .about-intro, .about-middle, .about-billboard {
+    padding: 60px 0;
+  }
+  
+  .about-intro {
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .about-image{
+    margin-left: 100px;
+    width: 500px;
+  }
+  
+  #about-quatro-text{
+    color: #002C41;
+    font-size: 40px;
+    
+  }
+  
+  #cocktail-born{
+    color: #002C41;
+    font-size: 40px;
+    margin: 10px;
+  }
+  
+  /* Middle Section */
+     
+  
+  #surprise-text{
+    color: #efefef;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  
+  #middle-text{
+    color: #d8d8d8;
+    font-size: 16px;
+    padding: 20px;
+    line-height: 1.2;
+  } 
+  
+  #paragraph1, #paragraph2, #paragraph3 {
+   margin-bottom: 20px;
+   text-align: left;
+  }
+  
+  .middle-image{ 
+    width: 500px;
+  } 
+  
+  /* Billboard Section */
+  .about-billboard {
+    align-items: center;
+    gap: 40px;
+    padding: 80px 0;
+  }
+  
+  
+  #billboard-image{
+    margin-left: 100px;
+    width: 500px;
+  }
+  
+  .billboard-text {
+    text-align: left;
+    padding-right: 40px;
+    font-size: 16px;
+  }
+  
+  #guess-what-text{
+    color: #002C41;
+    font-size: 40px;
+  }
+  
+  
 }

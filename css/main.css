@@ -227,6 +227,38 @@ body {
     height: 300px;
   }
   
+  @keyframes fadeSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .hero-fade-in {
+    opacity: 0;
+    animation: fadeSlideUp 1s ease-out forwards;
+  }
+  
+  
+  @keyframes titleZoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .title-zoom-in {
+    animation: titleZoomIn 0.8s ease-out forwards;
+    opacity: 0;
+  }
   
   #check-flavours{
     display: flex;

@@ -51,6 +51,52 @@ let currentIndex = 0; // current slide index (cherry=0)
 let slidesPerView = getSlidesPerView(); // Slides that are shown depending on the screen size
 
 
+// ----4. variables lightbox----
+
+// Array con la información de cada sabor
+const flavourInfo = [
+    { name: "Cherry Bomb", 
+      description: "Boom! Meet your new favorite party starter. Cherry Bomb brings a blast of juicy cherries, zesty lime soda, and a splash of rum that’ll light up your taste buds. Sweet, fizzy, and seriously fun — just pop the top and let the good times roll.", 
+      ingredients: "cherry juice, lime soda, grenadine, rum.", 
+      image: "images/quatro-cans/flip-cans/cherry-flip.png" 
+    },
+    { name: "Peach Bellini", 
+      description: "Sunshine in a can. Our Peach Bellini mixes silky peach goodness with bubbly Prosecco and a touch of berry magic. Light, fruity, and ready to sparkle — it's basically brunch’s best friend (and yours too).", 
+      ingredients: "white peach purée, Prosecco, berry essence.", 
+      image: "images/quatro-cans/flip-cans/peach-flip.png" 
+    },
+    { name: "Kiwi Martini", 
+      description: "Tropical vibes? Say less. The Kiwi Martini is a fresh punch of kiwi flavor, smooth vodka, and just the right amount of sweetness. Chill it, sip it, and let every sip teleport you to a beach party.", 
+      ingredients: "kiwi, vodka, simple syrup.", 
+      image: "images/quatro-cans/flip-cans/kiwi-flip.png" 
+    },
+    { name: "Piña Colada", 
+      description: "If you like Piña Coladas (and getting caught in the rain), you’re going to love this. Creamy coconut, juicy pineapple, and a shot of rum — it’s pure vacation in a can. Flip-flops optional.", 
+      ingredients: "coconut milk, pineapple juice, rum.", 
+      image: "images/quatro-cans/flip-cans/pina-flip.png" 
+    },
+    { name: "Grape Cosmo", 
+      description: "Sweet, bold, and a little sassy. The Grape Cosmo brings together juicy grapes, tangy cranberry, a twist of lime, and vodka for a fruity cocktail that knows how to party. Who says classic can’t be fun?", 
+      ingredients: "grape juice, cranberry juice, lime, vodka.", 
+      image: "images/quatro-cans/flip-cans/grape-flip.png"
+     }
+    ];
+  
+  // Selects the elements that are inside the .carousel-slide (the cans)
+  // when i create the function this is going to let the cans be clicked and open the lightbox
+  const flavourSlides = document.querySelectorAll('.carousel-slide');
+  // This is the container of the lightbox, so i can show it or hide it 
+  const lightbox = document.querySelector('#flavour-lightbox');
+  // this is the close button of the lightbox
+  const closeLightbox = document.querySelector('#close-lightbox');
+  // this selects the space where H2 is going to be shown that is the flavour of the can
+  const titleElement = document.querySelector('#lightbox-title');
+  // this selects the p that is going to show the description of the flavour
+  const descElement = document.querySelector('#lightbox-description');
+  // this is the p where the ingredients are going to be shown
+  const ingredientsElement = document.querySelector('#lightbox-ingredients');
+  // this is the image that is going to be shown in the lightbox
+  const imageElement = document.querySelector('#lightbox-image');
 
 // -------------------------------- FUNCTIONS --------------------------------
 
@@ -161,6 +207,55 @@ function getSlidesPerView() {
   }
   
 
+  // ----4. Functions lightbox----
+
+  // Fuction to fill the lightbox with the information of the flavour
+// this is the function that is going to be called when the can is clicked
+function fillLightbox() {
+
+    // This is goign to get the data-flavour of each can "0" "1" "2" "3" "4" 
+    const index = this.dataset.flavour;
+  
+    // This is going to get the flavour of the array flavourInfo
+    const flavour = flavourInfo[index];
+  
+    // This is going to fill the H2 informtion 
+    titleElement.textContent = flavour.name;
+  
+    //this is going to fill the description <p> of each flavor 
+    descElement.textContent = flavour.description;
+  
+    // this is going to fill the ingredients <p> of each flavor
+    ingredientsElement.textContent = `Ingredients: ${flavour.ingredients}`;
+  
+    // this is going to fill the image of each flavor
+    imageElement.src = flavour.image;
+  
+    // this is going to set the alt of the image
+    imageElement.alt = `${flavour.name} image`;
+  
+    //this is going to be the lightbox visible 
+    lightbox.classList.add('show');
+  }
+  
+  // Function that closes the lightbox
+  function closeLightboxFunction() {
+  
+    // to close the lightbox, it removes the show class to hide it
+    lightbox.classList.remove('show');
+  }
+  
+  // Function that closes the lightbox when clicking outside of it
+  function outsideClick(e) {
+  
+    //if someone click on the e.target (out the lightbox) it closes the lightbox
+    if (e.target === lightbox) {
+  
+      //call the function to clse the lightbox
+      closeLightboxFunction();
+    }
+  }
+
 
   // -------------------------------- EVENT LISTENERS --------------------------------
 
@@ -219,4 +314,16 @@ if (track && flavourSlides.length && leftArrow && rightArrow) {
   
   // When the page loads, it needs to calculate the slides per view and update the carousel
     updateCarousel();
+  }
+
+// ----4. EventListener lightbox----
+
+
+if (slides.length && lightbox && closeLightbox) {
+    slides.forEach(slide => {
+      slide.addEventListener('click', fillLightbox);
+    });
+  
+    closeLightbox.addEventListener('click', closeLightboxFunction);
+    lightbox.addEventListener('click', outsideClick);
   }

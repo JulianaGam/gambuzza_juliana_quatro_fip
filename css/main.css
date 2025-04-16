@@ -1,15 +1,38 @@
 /* 
-    CSS Guide 
-
-    1.  General Styles (Normalize)
-    2. mobile styles
-    3.tablet styles
-    4. desktop styles   
+    CSS Guide
 
   1. ---------------- Age filter ---------------
   2.  --------------- Home page----------------
-  3. ---------------- Contact page----------------
-  4. ---------------- About us page----------------
+        2.1 --- header ----
+        2.2 --- burger button ----
+        2.3 --- menu container --- 
+        2.4 --- cart button ---
+        2.5 --- Hero section ---
+        2.6 --- Carousel ---
+        2.7 --- Button Add to Cart ---
+        2.8 --- Carrousel Arrows ---
+        2.9 --- Lightbox array ---
+        2.10 --- Video section ---
+        2.11 --- More about us Button ---
+        2.12 --- store section ---
+        2.13 --- footer ---
+
+ 3. ---------------- About us page----------------
+
+        3.1 --- hero img ---
+        3.2 --- about section ---
+        3.3 --- middle section ---
+        3.4 --- billboard section ---
+        3.5 --- video section ---
+        3.6 --- button styles --- 
+  4. ---------------- Contact page----------------
+        4.1 ---hero img---
+        4.2 --- form styling ---
+        4.3 --- form elements ---
+        4.4 --- button styles ---
+
+  5. -------------- Tablet styles -----------------
+  6. -------------- Desktop styles -----------------
  */
 
 /* 1. General Styles */

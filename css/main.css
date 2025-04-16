@@ -564,6 +564,10 @@ body {
   .about-button:hover {
     background-color: #015982;
   }
+
+  .about-button-desktop:hover {
+    background-color: #015982;
+  }
   
   
   /*store section*/

@@ -117,7 +117,7 @@ function hamburgerMenu() {
 
 // This verify when it loads the page if the user has already fill the age filter
 // If the user has already verified their age, it hides the age filter
-if (localStorage.ageVerified === 'true') {
+if (localStorage.ageVerified === 'true' && ageFilter) {
     ageFilter.style.display = 'none';
   }
   

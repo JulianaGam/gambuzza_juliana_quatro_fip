@@ -6,6 +6,13 @@
 // ----4. variables lightbox----
 
 
+// ----1. variables burger menu----
+
+let burgerButton = document.querySelector("#burger-button"); 
+let burgerCon = document.querySelector("#burger-con");
+
+
+
 // ----2. variables age filter----
 
 // Create variables for the age filter
@@ -23,7 +30,7 @@ const yearInput = document.querySelector('#year-box');
 const confirmButton = document.querySelector('#confirm-age');
 
 //This is the container of the filter
-
+const ageFilter = document.querySelector('#age-filter'); 
 
 // -------------------------------- FUNCTIONS --------------------------------
 
@@ -32,7 +39,16 @@ const confirmButton = document.querySelector('#confirm-age');
 // ----3. Functions Carousel----
 // ----4. Functions lightbox----
 
+
+// ----1. Functions burger menu----
+
+function hamburgerMenu() {
+    burgerCon.classList.toggle("slide-toggle");
+    burgerButton.classList.toggle("expanded"); 
+  }
+
 // ----2. Functions age filter----
+
 // This verify when it loads the page if the user has already fill the age filter
 // If the user has already verified their age, it hides the age filter
 if (localStorage.ageVerified === 'true') {
@@ -90,8 +106,13 @@ if (localStorage.ageVerified === 'true') {
 // ----4. EventListener lightbox----
 
 
-// ----2. EventListener  filter----
+// ----1. EventListener burger menu----
+if (burgerButton && burgerCon) {
+    burgerButton.addEventListener("click", hamburgerMenu, false);
+  }
+  
 
+// ----2. EventListener  filter----
 
 // Listener para el botón de confirmación de edad
 if (confirmButton) {

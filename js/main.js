@@ -157,6 +157,8 @@ if (localStorage.ageVerified === 'true') {
   
     // Verify if the age is 21+ or if is 21-
     if (age >= 21) {
+        // Store the age verification in local storage
+        localStorage.ageVerified = 'true'; 
       if (ageFilter) ageFilter.style.display = 'none'; // Hide the filter if is 21+
     } else {
       alert('Sorry, you must be of legal drinking age to enter.'); // show the alert if is 21-
